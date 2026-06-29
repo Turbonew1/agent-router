@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to agent-router.
+All notable changes to skill-pilot.
 
 ## [1.0.0] - 2026-06-28
 

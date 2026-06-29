@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="Agent Router v1.0.0" />
+  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="SkillPilot v1.0.0" />
   <img src="https://img.shields.io/badge/совместим-Claude%20Code%20%7C%20Codex%20%7C%20OpenClaw-FF6B35?style=for-the-badge" alt="Совместим с несколькими агентами" />
   <img src="https://img.shields.io/badge/лицензия-MIT-green?style=for-the-badge" alt="MIT лицензия" />
 </p>
 
-<h1 align="center">Agent Router</h1>
+<h1 align="center">SkillPilot</h1>
 
 <p align="center">
   <em>Интеллектуальная маршрутизация задач для ИИ-агентов</em>
@@ -18,7 +18,7 @@
 
 ## Что это
 
-**Agent Router** сканирует установленные вами skills, agents и инструменты MCP, затем генерирует **умную таблицу маршрутизации**, которая говорит вашему ИИ-агенту, какой инструмент использовать для каждого типа задачи.
+**SkillPilot** сканирует установленные вами skills, agents и инструменты MCP, затем генерирует **умную таблицу маршрутизации**, которая говорит вашему ИИ-агенту, какой инструмент использовать для каждого типа задачи.
 
 ### Проблема
 
@@ -26,7 +26,7 @@
 
 ### Решение
 
-Agent Router создает маппинг: **паттерны задач → лучший инструмент**. Он автоматически загружается в каждой сессии, поэтому не нужно вводить команды — просто опишите задачу.
+SkillPilot создает маппинг: **паттерны задач → лучший инструмент**. Он автоматически загружается в каждой сессии, поэтому не нужно вводить команды — просто опишите задачу.
 
 ### Поддерживаемые агенты
 
@@ -43,11 +43,11 @@ Agent Router создает маппинг: **паттерны задач → л
 
 ```bash
 # Вариант 1: npx (Рекомендуется)
-npx skills add https://github.com/Turbonew1/agent-router
+npx skills add https://github.com/Turbonew1/skill-pilot
 
 # Вариант 2: Вручную
-git clone https://github.com/Turbonew1/agent-router.git
-bash agent-router/scripts/install.sh
+git clone https://github.com/Turbonew1/skill-pilot.git
+bash skill-pilot/scripts/install.sh
 ```
 
 ## Как Это Работает
@@ -55,7 +55,7 @@ bash agent-router/scripts/install.sh
 ```
 Пользователь: "Сделай лендинг"
          ↓
-Agent Router читает правила маршрутизации
+SkillPilot читает правила маршрутизации
          ↓
 Совпадение: "лендинг" → /design-taste-frontend
          ↓
@@ -71,7 +71,7 @@ Agent Router читает правила маршрутизации
 После установки запустите сканирование:
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ### Ежедневное использование
@@ -95,7 +95,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 После установки новых skills или agents:
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ## Что Сканируется
@@ -111,7 +111,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 Сгенерированный файл маршрутизации находится по адресу:
 
 ```
-~/.claude/rules/common/agent-router.md
+~/.claude/rules/common/skill-pilot.md
 ```
 
 Этот файл автоматически загружается в **каждую сессию агента**.
@@ -139,7 +139,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 **О:** Нет. Это добавляет слой маршрутизации поверх. Ваши skills работают точно так же — это просто помогает вашему агенту выбрать правильный.
 
 ### В: Что если роутер выберет неправильный инструмент?
-**О:** Отредактируйте `~/.claude/rules/common/agent-router.md` для настройки приоритетов, или просто скажите "используй X skill" для переопределения.
+**О:** Отредактируйте `~/.claude/rules/common/skill-pilot.md` для настройки приоритетов, или просто скажите "используй X skill" для переопределения.
 
 ### В: Как часто нужно повторно сканировать?
 **О:** Только после установки/удаления skills или agents. Файл маршрутизации сохраняется между сессиями.

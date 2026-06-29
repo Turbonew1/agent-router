@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
-# Agent Router — Installer
+# SkillPilot — Installer
 # Installs the skill and generates the initial routing config.
 # Usage: bash install.sh
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SKILL_SRC="$(dirname "$SCRIPT_DIR")/skills/agent-router"
-SKILL_DST="${HOME}/.claude/skills/agent-router"
+SKILL_SRC="$(dirname "$SCRIPT_DIR")/skills/skill-pilot"
+SKILL_DST="${HOME}/.claude/skills/skill-pilot"
 
 log() { echo "▸ $1"; }
 ok() { echo "✓ $1"; }
 
 echo ""
 echo "╔══════════════════════════════════════════╗"
-echo "║   Agent Router — Installer              ║"
+echo "║   SkillPilot — Installer              ║"
 echo "║   智能任务路由 / Intelligent Task Router  ║"
 echo "╚══════════════════════════════════════════╝"
 echo ""
 
 # --- Step 1: Install Skill ---
-log "Installing agent-router skill..."
+log "Installing skill-pilot skill..."
 mkdir -p "$SKILL_DST"
 cp "$SKILL_SRC/SKILL.md" "$SKILL_DST/SKILL.md"
 ok "Skill installed → $SKILL_DST"
@@ -38,7 +38,7 @@ bash "$SKILL_DST/scripts/scan-tools.sh"
 ok "Routing config generated"
 
 # --- Step 4: Verify ---
-ROUTING_FILE="${HOME}/.claude/rules/common/agent-router.md"
+ROUTING_FILE="${HOME}/.claude/rules/common/skill-pilot.md"
 if [[ -f "$ROUTING_FILE" ]]; then
   ok "Routing rules active → $ROUTING_FILE"
 else
@@ -55,7 +55,7 @@ echo "║   • Just describe your task normally     ║"
 echo "║   • Claude auto-routes to best tool      ║"
 echo "║                                          ║"
 echo "║   Re-scan after adding new skills:       ║"
-echo "║   bash ~/.claude/skills/agent-router/   ║"
+echo "║   bash ~/.claude/skills/skill-pilot/   ║"
 echo "║         scripts/scan-tools.sh            ║"
 echo "╚══════════════════════════════════════════╝"
 echo ""

@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="Agent Router v1.0.0" />
+  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="SkillPilot v1.0.0" />
   <img src="https://img.shields.io/badge/compatible-Claude%20Code%20%7C%20Codex%20%7C%20OpenClaw-FF6B35?style=for-the-badge" alt="Compatible avec plusieurs agents" />
   <img src="https://img.shields.io/badge/licence-MIT-green?style=for-the-badge" alt="Licence MIT" />
 </p>
 
-<h1 align="center">Agent Router</h1>
+<h1 align="center">SkillPilot</h1>
 
 <p align="center">
   <em>Routage Intelligent des Tâches pour les Agents IA</em>
@@ -18,7 +18,7 @@
 
 ## C'est quoi
 
-**Agent Router** scanne vos skills, agents et outils MCP installés, puis génère une **table de routage intelligente** qui dit à votre agent IA quel outil utiliser pour chaque type de tâche.
+**SkillPilot** scanne vos skills, agents et outils MCP installés, puis génère une **table de routage intelligente** qui dit à votre agent IA quel outil utiliser pour chaque type de tâche.
 
 ### Le Problème
 
@@ -26,7 +26,7 @@ Vous avez 400+ skills, 60+ agents et des dizaines d'outils MCP installés. Quand
 
 ### La Solution
 
-Agent Router crée un mapping : **motifs de tâche → meilleur outil**. Il se charge automatiquement dans chaque session, donc pas besoin de taper des commandes — décrivez juste votre tâche.
+SkillPilot crée un mapping : **motifs de tâche → meilleur outil**. Il se charge automatiquement dans chaque session, donc pas besoin de taper des commandes — décrivez juste votre tâche.
 
 ### Agents Supportés
 
@@ -43,11 +43,11 @@ Agent Router crée un mapping : **motifs de tâche → meilleur outil**. Il se c
 
 ```bash
 # Option 1 : npx (Recommandé)
-npx skills add https://github.com/Turbonew1/agent-router
+npx skills add https://github.com/Turbonew1/skill-pilot
 
 # Option 2 : Manuel
-git clone https://github.com/Turbonew1/agent-router.git
-bash agent-router/scripts/install.sh
+git clone https://github.com/Turbonew1/skill-pilot.git
+bash skill-pilot/scripts/install.sh
 ```
 
 ## Comment Ça Marche
@@ -55,7 +55,7 @@ bash agent-router/scripts/install.sh
 ```
 Utilisateur : "Créez-moi une landing page"
          ↓
-Agent Router lit les règles de routage
+SkillPilot lit les règles de routage
          ↓
 Correspondance : "landing page" → /design-taste-frontend
          ↓
@@ -71,7 +71,7 @@ Terminé — aucune commande manuelle nécessaire
 Après l'installation, lancez le scan :
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ### Utilisation Quotidienne
@@ -95,7 +95,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 Après avoir installé de nouveaux skills ou agents :
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ## Ce Qui Est Scanné
@@ -111,7 +111,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 Le fichier de routage généré se trouve à :
 
 ```
-~/.claude/rules/common/agent-router.md
+~/.claude/rules/common/skill-pilot.md
 ```
 
 Ce fichier se charge automatiquement dans **chaque session d'agent**.
@@ -139,7 +139,7 @@ Ce fichier se charge automatiquement dans **chaque session d'agent**.
 **A :** Non. Cela ajoute une couche de routage par-dessus. Vos skills fonctionnent exactement de même — cela aide juste votre agent à choisir le bon.
 
 ### Q : Et si le routeur choisit le mauvais outil ?
-**A :** Éditez `~/.claude/rules/common/agent-router.md` pour ajuster les priorités, ou dites "utilisez X skill" pour écraser.
+**A :** Éditez `~/.claude/rules/common/skill-pilot.md` pour ajuster les priorités, ou dites "utilisez X skill" pour écraser.
 
 ### Q : À quelle fréquence dois-je re-scanner ?
 **A :** Uniquement après avoir installé/supprimé des skills ou agents. Le fichier de routage persiste entre les sessions.

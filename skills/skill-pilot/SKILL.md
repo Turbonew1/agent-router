@@ -1,19 +1,19 @@
 ---
-name: agent-router
+name: skill-pilot
 description: Intelligent task-to-tool router. Scans installed skills, agents, and MCP tools, then auto-routes tasks to the best tool. Run once after installing new skills/agents.
 ---
 
-# Agent Router — 智能任务路由 / Intelligent Task Router for AI Agents
+# SkillPilot — 智能任务路由 / Intelligent Task Router for AI Agents
 
 > One skill to rule them all — automatically routes your tasks to the right skill, agent, or MCP tool.
 
 ## What This Does
 
-Agent Router scans your installed tools and creates a **smart routing table** that tells Claude which tool to use for each task type. No more guessing — just describe your task and the right tool fires automatically.
+SkillPilot scans your installed tools and creates a **smart routing table** that tells Claude which tool to use for each task type. No more guessing — just describe your task and the right tool fires automatically.
 
 ## When to Run
 
-- **First time**: Run `/agent-router` after installing this skill
+- **First time**: Run `/skill-pilot` after installing this skill
 - **After adding skills**: Re-run to pick up new tools
 - **Troubleshooting**: Re-run if routing seems off
 
@@ -23,12 +23,12 @@ Agent Router scans your installed tools and creates a **smart routing table** th
 
 Tell Claude:
 
-> Run the agent-router scan
+> Run the skill-pilot scan
 
 Claude will execute the scan script and generate a routing config:
 
 ```bash
-bash ~/.claude/skills/agent-router/scripts/scan-tools.sh
+bash ~/.claude/skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 This scans:
@@ -41,7 +41,7 @@ This scans:
 After scanning, Claude writes the routing rules to:
 
 ```
-~/.claude/rules/common/agent-router.md
+~/.claude/rules/common/skill-pilot.md
 ```
 
 This file **auto-loads into every session** — no manual setup needed.
@@ -73,7 +73,7 @@ The router uses these priority rules:
 Edit the generated routing file to add custom rules:
 
 ```bash
-~/.claude/rules/common/agent-router.md
+~/.claude/rules/common/skill-pilot.md
 ```
 
 Add entries like:
@@ -96,15 +96,15 @@ Add entries like:
 ```bash
 # After installing new skills
 npx skills add <repo-url>
-bash ~/.claude/skills/agent-router/scripts/scan-tools.sh
+bash ~/.claude/skills/skill-pilot/scripts/scan-tools.sh
 
 # After adding new agents
 # Just re-run the scan
-bash ~/.claude/skills/agent-router/scripts/scan-tools.sh
+bash ~/.claude/skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ## Troubleshooting
 
-- **Wrong tool selected**: Edit `~/.claude/rules/common/agent-router.md` to adjust priorities
+- **Wrong tool selected**: Edit `~/.claude/rules/common/skill-pilot.md` to adjust priorities
 - **Tool not found**: Re-run scan to pick up newly installed tools
-- **Rules not loading**: Ensure the file is at `~/.claude/rules/common/agent-router.md`
+- **Rules not loading**: Ensure the file is at `~/.claude/rules/common/skill-pilot.md`

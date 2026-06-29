@@ -2,7 +2,7 @@
 
 # Claude Router — Local skill registry
 declare -A SKILLS=(
-  [agent-router]="skills/agent-router/SKILL.md"
+  [skill-pilot]="skills/skill-pilot/SKILL.md"
 )
 
 if [[ $# -eq 0 ]]; then

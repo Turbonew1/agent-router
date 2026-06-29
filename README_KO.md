@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="Agent Router v1.0.0" />
+  <img src="https://img.shields.io/badge/agent--router-v1.0.0-6B46C1?style=for-the-badge" alt="SkillPilot v1.0.0" />
   <img src="https://img.shields.io/badge/호환-Claude%20Code%20%7C%20Codex%20%7C%20OpenClaw-FF6B35?style=for-the-badge" alt="다중 에이전트 지원" />
   <img src="https://img.shields.io/badge/라이선스-MIT-green?style=for-the-badge" alt="MIT 라이선스" />
 </p>
 
-<h1 align="center">Agent Router</h1>
+<h1 align="center">SkillPilot</h1>
 
 <p align="center">
   <em>AI 에이전트를 위한 지능형 태스크 라우팅</em>
@@ -18,7 +18,7 @@
 
 ## 이란
 
-**Agent Router**는 설치된 스킬, 에이전트, MCP 도구를 스캔하고, 각 작업에 가장 적합한 도구를 에이전트에 알려주는 **스마트 라우팅 테이블**을 생성합니다.
+**SkillPilot**는 설치된 스킬, 에이전트, MCP 도구를 스캔하고, 각 작업에 가장 적합한 도구를 에이전트에 알려주는 **스마트 라우팅 테이블**을 생성합니다.
 
 ### 해결하는 문제
 
@@ -26,7 +26,7 @@
 
 ### 해결책
 
-Agent Router는 **작업 패턴 → 최적의 도구** 매핑을 생성합니다. 모든 세션에서 자동으로 로드되므로 명령을 입력할 필요 없이 작업을 설명하기만 하면 됩니다.
+SkillPilot는 **작업 패턴 → 최적의 도구** 매핑을 생성합니다. 모든 세션에서 자동으로 로드되므로 명령을 입력할 필요 없이 작업을 설명하기만 하면 됩니다.
 
 ### 지원 에이전트
 
@@ -43,11 +43,11 @@ Agent Router는 **작업 패턴 → 최적의 도구** 매핑을 생성합니다
 
 ```bash
 # 방법 1: npx (권장)
-npx skills add https://github.com/Turbonew1/agent-router
+npx skills add https://github.com/Turbonew1/skill-pilot
 
 # 방법 2: 수동
-git clone https://github.com/Turbonew1/agent-router.git
-bash agent-router/scripts/install.sh
+git clone https://github.com/Turbonew1/skill-pilot.git
+bash skill-pilot/scripts/install.sh
 ```
 
 ## 작동 방식
@@ -55,7 +55,7 @@ bash agent-router/scripts/install.sh
 ```
 사용자: "랜딩 페이지를 만들어줘"
          ↓
-Agent Router가 라우팅 규칙을 읽음
+SkillPilot가 라우팅 규칙을 읽음
          ↓
 매칭: "랜딩 페이지" → /design-taste-frontend
          ↓
@@ -71,7 +71,7 @@ Agent Router가 라우팅 규칙을 읽음
 설치 후 스캔 실행:
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ### 일상 사용
@@ -95,7 +95,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 새 스킬이나 에이전트를 설치한 후:
 
 ```bash
-bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
+bash ~/.agent-skills/skill-pilot/scripts/scan-tools.sh
 ```
 
 ## 스캔 대상
@@ -111,7 +111,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 생성된 라우팅 파일 위치:
 
 ```
-~/.claude/rules/common/agent-router.md
+~/.claude/rules/common/skill-pilot.md
 ```
 
 이 파일은 **모든 에이전트 세션**에서 자동으로 로드됩니다.
@@ -139,7 +139,7 @@ bash ~/.agent-skills/agent-router/scripts/scan-tools.sh
 **A:** 아니요. 이는 스킬 위에 라우팅 계층을 추가하는 것입니다. 기존 스킬은 그대로 작동합니다 — 에이전트가 올바른 도구를 선택하는 데 도움을 줄 뿐입니다.
 
 ### Q: 라우터가 잘못된 도구를 선택하면?
-**A:** `~/.claude/rules/common/agent-router.md`를 편집하여 우선순위를 조정하거나, "X 스킬 사용해"라고 말하여 오버라이드하세요.
+**A:** `~/.claude/rules/common/skill-pilot.md`를 편집하여 우선순위를 조정하거나, "X 스킬 사용해"라고 말하여 오버라이드하세요.
 
 ### Q: 얼마나 자주 재스캔해야 하나요?
 **A:** 스킬이나 에이전트를 설치/제거할 때만 하면 됩니다. 라우팅 파일은 세션 간에 유지됩니다.
