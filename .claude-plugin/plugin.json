@@ -1,0 +1,20 @@
+{
+  "name": "claude-router",
+  "description": "Intelligent task-to-tool router for Claude Code — auto-detects installed skills, agents, and MCP tools, then routes tasks to the best tool",
+  "version": "1.0.0",
+  "author": {
+    "name": "jackyoung",
+    "email": ""
+  },
+  "homepage": "https://github.com/jackyoung/claude-router-skill",
+  "repository": "https://github.com/jackyoung/claude-router-skill",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "routing",
+    "auto-select",
+    "task-routing",
+    "claude-code",
+    "productivity"
+  ]
+}

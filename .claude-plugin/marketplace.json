@@ -1,0 +1,20 @@
+{
+  "name": "claude-router-skill",
+  "description": "Claude Router — intelligent task routing for Claude Code. Scans skills, agents, and MCP tools, then auto-selects the best tool for each task.",
+  "owner": {
+    "name": "jackyoung",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "claude-router",
+      "description": "Intelligent task-to-tool router — auto-detects installed tools and routes tasks to the best skill, agent, or MCP tool",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "jackyoung",
+        "email": ""
+      }
+    }
+  ]
+}
