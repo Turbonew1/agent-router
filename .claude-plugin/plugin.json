@@ -1,13 +1,13 @@
 {
-  "name": "claude-router",
-  "description": "Intelligent task-to-tool router for Claude Code — auto-detects installed skills, agents, and MCP tools, then routes tasks to the best tool",
+  "name": "agent-router",
+  "description": "Intelligent task-to-tool router for AI agents — works with Claude Code, Codex, OpenClaw, Cursor, and more — auto-detects installed skills, agents, and MCP tools, then routes tasks to the best tool",
   "version": "1.0.0",
   "author": {
     "name": "jackyoung",
     "email": ""
   },
-  "homepage": "https://github.com/jackyoung/claude-router-skill",
-  "repository": "https://github.com/jackyoung/claude-router-skill",
+  "homepage": "https://github.com/jackyoung/agent-router-skill",
+  "repository": "https://github.com/jackyoung/agent-router-skill",
   "license": "MIT",
   "keywords": [
     "skills",

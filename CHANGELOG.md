@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to claude-router-skill.
+All notable changes to agent-router.
 
 ## [1.0.0] - 2026-06-28
 
