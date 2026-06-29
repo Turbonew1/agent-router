@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="#中文说明">🇨🇳 中文</a> · <a href="#english">🇺🇸 English</a>
+  <a href="#-cn-中文说明">🇨🇳 中文</a> · <a href="#-us-english">🇺🇸 English</a>
 </p>
 
 ---
