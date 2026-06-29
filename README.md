@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="README_CN.md">🇨🇳 中文文档</a>
+  <b>🇺🇸 English</b> · <a href="README_CN.md">🇨🇳 中文</a>
 </p>
 
 ---
